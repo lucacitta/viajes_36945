@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Destinos disponibles</h1>
+
+{% for destino in listar_destinos %}
+    <div class="card" style="width: 18rem; margin-left:30rem">
+        <img src="{{destino.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{destino.name}}</h5>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+{% endblock %}

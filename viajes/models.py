@@ -10,3 +10,4 @@ class Viaje(models.Model):
 
 class Destino(models.Model):
     name = models.CharField(max_length=50)
+    image = models.ImageField(blank=True, null=True, upload_to = 'destinos')
