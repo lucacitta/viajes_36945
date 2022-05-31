@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Viajes disponibles</h1>
-    {% for viaje in lista_viajes %}
-        <h2>{{viaje.destino}}</h2>
-        <p>Fecha salida {{viaje.fecha_salida}}</p>
-        <p>Fecha llegada {{viaje.fecha_regreso}}</p>
-        <h3>Precio ${{viaje.precio}}</h3>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Viajes disponibles</h1>
+
+{% for viaje in lista_viajes %}
+    <div class="card" style="width: 18rem; margin-left:30rem">
+        <img src="https://cdn.getyourguide.com/img/tour/5d270e86b3e53.jpeg/146/Desde-Salta--excursi-n-de-d-a-completo-a-Humahuaca.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{viaje.destino}}</h5>
+        <p class="card-text">Fecha llegada: {{viaje.fecha_regreso}}</p>
+        <p class="card-text">Fecha salida: {{viaje.fecha_salida}}</p>
+        <a href="#" class="btn btn-primary">Precio ${{viaje.precio}}</a>
+        </div>
+    </div>
+
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
